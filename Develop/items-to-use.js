@@ -90,3 +90,11 @@ $(".time-block").on("click", "p", function() {
     // get the text area's current value/text
     var text = $(this).val();  
   });
+
+
+  // audit task due dates every 30 minutes
+setInterval(function() {
+  $(".card .list-group-item").each(function() {
+    auditEvent($(this));
+  });
+}, 1800000);
