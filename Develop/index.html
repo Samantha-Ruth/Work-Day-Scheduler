@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- BOOTSTRAP-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <!-- GOOGLE FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <!-- JQUERY-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+    <!-- ICONS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha512-UyNhw5RNpQaCai2EdC+Js0QL4RlVmiq41DkmCJsRV3ZxipG2L0HhTqIf/H9Hp8ez2EnFlkBnjRGJU2stW3Lj+w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- OWN STYLE SHEET-->
+    <link rel="stylesheet" href="style.css"/>
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead">Today's date is:</p>
+      <!--current day goes here -->
+    </header>
+    <div class="container">
+    </div>
+      <!-- Timeblocks go here  -->
+      <div class="row">
+        <span class="time-now col-1 list-group-item d-flex align-items-center">9 AM</span>
+        <div class="event-paragraph col-10 list-group-item bg-light time-block d-flex justify-content-left border-dark border-top-0 border-bottom-0">Event</div>
+        <div class="col-1 list-group-item bg-info justify-content-center d-flex align-items-center w-100 p-3 rounded-right"><span class="oi oi-calendar text-light"></span></div>
+      </div>
+      <!--
+      <div class="row">
+        <span class="col-1 list-group-item">10 am</span>
+        <div class="col-10 list-group-item bg-light time-block"></div>
+        <div class="col-1 list-group-item bg-info">Lock</div>
+      </div>
+      <div class="row">
+        <span class="col-1 list-group-item">11 am</span>
+        <div class="col-10 list-group-item bg-danger time-block"></div>
+        <div class="col-1 list-group-item bg-info">Lock</div>
+      </div>
+      <div class="row">
+        <span class="col-1 list-group-item">12 pm</span>
+        <div class="col-10 list-group-item bg-success time-block"></div>
+        <div class="col-1 list-group-item bg-info">Lock</div>
+      </div>
+      <div class="row">
+        <span class="col-1 list-group-item ">1 pm</span>
+        <div class="col-10 list-group-item time-block"></div>
+        <div class="col-1 list-group-item bg-info">Lock</div>
+      </div>
+      <div class="row">
+        <span class="col-1 list-group-item ">2 pm</span>
+        <div class="col-10 list-group-item time-block"></div>
+        <div class="col-1 list-group-item bg-info">Lock</div>
+      </div>
+      <div class="row">
+        <span class="col-1 list-group-item ">3 pm</span>
+        <div class="col-10 list-group-item time-block"></div>
+        <div class="col-1 list-group-item bg-info">Lock</div>
+      </div>
+      <div class="row">
+        <span class="col-1 list-group-item ">4 pm</span>
+        <div class="col-10 list-group-item time-block"></div>
+        <div class="col-1 list-group-item bg-info">Lock</div>
+      </div>
+      <div class="row">
+        <span class="col-1 list-group-item">5 pm</span>
+        <div class="col-10 list-group-item time-block"></div>
+        <div class="col-1 list-group-item bg-info">Lock</div>
+      </div>
+    </div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+     <!-- LUXON LINK-->
+     <!-- <script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js"></script> -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
