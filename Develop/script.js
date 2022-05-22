@@ -3,7 +3,7 @@
 
 // Display current day **  FOR LUXON DATE
   // $("#currentDay").text(DateTime.now().toFormat('MMMM dd, yyyy'));
-  $("#currentDay").text(moment())
+  $("#currentDay").text(moment(), "MMM Do YYYY");
   // dynamically create work day list
   // *** still need to figure out how to add time of day!!! Needs to connect to current time...***
 // adding time of day
