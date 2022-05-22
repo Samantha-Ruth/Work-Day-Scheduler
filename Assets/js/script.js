@@ -3,11 +3,7 @@ $("#currentDay").text(moment().format("MMM Do, YYYY"));
 
 var events = []; 
 
-// var eventTimeObj = {
-//   name: eventNameInput,
-//   type: eventTypeInput
-// }
-// events.push(eventTimeObj);
+var tasks = [];
 
 var timeNowEl = $(".time-now").text(moment());
 
@@ -42,13 +38,13 @@ function buildCard() {
   var saveButtonEl = $("<div>")
     .addClass("save-button col-1 list-group-item bg-info justify-content-center d-flex align-items-center w-100 p-3 rounded-right");
   $(saveButtonEl).add("<span>")
-    .addClass("oi oi-calendar text-light");
+    .addClass("oi oi-calendar text-light"); 
  
   $(rowEl).append(saveButtonEl);
 
-  // THIS CHANGES THE COLORS? WRITTEN IN MOMENT - NEED TO FIX TO LUXON?
+  // Change the colors based on time
   var auditEvent = function() {
-    // get time from span element (once you figure out how to set it)
+    // get time from span element
     var time = $(timeOfDayEl).find("div").text().trim();
     // remove any old classes from Element
     $(".time-block").removeClass("list-group-item-warning list-group-item-light list-group-item-danger");
@@ -63,7 +59,13 @@ function buildCard() {
       $(".time-block").addClass("bg-success");
     }
   }
-  auditEvent();
+  auditEvent(); 
+  // audit task due dates every 30 minutes
+  setInterval(function() {
+    $(".time-block .text-area").each(function() {
+    auditTask($(this));
+    });
+  }, 1800000);
 }
 
 // for loop to build time slots for work hours
@@ -93,54 +95,31 @@ var saveEvents = function() {
 };
 // save button was clicked - save to local Storage
 
-
 // // **** HELP!!!!  THIS ISN'T SAVING TO LOCAL STORAGE !
 $(".save-button").click(function() {
   console.log("save button was clicked!");
   // get form values
   var eventText = $(".text-area").val();
+  var eventTime = $(".time-of-day").val();
   console.log(eventText);
-  var eventTime = $(".text.-area").val();
+  console.log(eventTime);
  // save in tasks array
   events.push({
      text: eventText, 
+     time: eventTime
       });
   saveEvents();
   })
       
-  console.log(events);
-
-
-// audit task due dates every 30 minutes
-setInterval(function() {
-  $(".time-block .text-area").each(function() {
-    auditTask($(this));
-  });
-}, 1800000);
-
-
-
-
-
-
-
-
-
-
-// audit task due dates every 30 minutes
-// setInterval(function() {
-//   $(".card .list-group-item").each(function() {
-//     auditTask($(this));
-//   });
-// }, 1800000);
-
-
-
-
-// create date to put into timeOfDayEl
-// var times = function () {
-//   dt = DateTime.fromObject({day: 22, hour: 12 }, { zone: 'America/Los_Angeles', numberingSystem: 'beng'})
-//   console.log(dt);
-// }
-
+  // get items from local storage
+  var loadEvents = function() {
+    var savedEvents = localStorage.getItem("events");
+    // parse into array of objects
+    savedEvents = JSON.parse(savedEvents);
+    // loop through savedTasks array
+    for (var i = 0; i < savedEvents.length; i++) {
+      // pass each task object into the `createTaskEl()` function
+      buildCard(savedEvents[i]);
+    }
+  };
 
